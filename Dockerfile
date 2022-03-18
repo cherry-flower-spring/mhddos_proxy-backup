@@ -8,7 +8,7 @@ RUN pip3 install --target=/mhddos_proxy/dependencies -r MHDDoS/requirements.txt
 FROM python:3.10-alpine
 WORKDIR mhddos_proxy
 COPY --from=builder	/mhddos_proxy .
-RUN wget https://github.com/porthole-ascend-cinnamon/mhddos_proxy.git
+RUN wget https://raw.githubusercontent.com/Aruiem234/mhddosproxy/main/proxies_config.json
 ENV PYTHONPATH="${PYTHONPATH}:/mhddos_proxy/dependencies"
 
 ENTRYPOINT ["python3", "./runner.py"]
